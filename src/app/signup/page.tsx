@@ -26,6 +26,7 @@ export default function SignupPage() {
     }
   }
 
+  //signup function
   async function handleSubmit(formData: FormData) {
     setIsLoading(true)
     try {
