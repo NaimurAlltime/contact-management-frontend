@@ -32,7 +32,7 @@ export default function Home() {
   }
 
   return (
-    <div className="container flex flex-col items-center justify-center min-h-[calc(100vh-80px)] p-4">
+    <div className="container mx-auto flex flex-col items-center justify-center min-h-[calc(100vh-80px)] p-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -54,7 +54,7 @@ export default function Home() {
             onClick={handleFirstContact}
             className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-6 text-lg rounded-full"
           >
-            First Contact
+            Contact Now
           </Button>
         </motion.div>
       </motion.div>

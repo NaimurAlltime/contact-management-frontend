@@ -4,6 +4,7 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import Header from "@/components/header"
 import AuthProvider from "@/components/auth-provider"
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -24,6 +25,7 @@ export default function RootLayout({
           <AuthProvider>
             <div className="min-h-screen flex flex-col">
               <Header />
+              <Toaster position="top-right" />
               <main className="flex-1">{children}</main>
             </div>
           </AuthProvider>

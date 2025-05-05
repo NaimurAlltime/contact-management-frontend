@@ -33,7 +33,7 @@ export default function Header() {
 
   return (
     <header className="border-b">
-      <div className="container flex h-20 items-center justify-between">
+      <div className="container mx-auto flex h-20 items-center justify-between">
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
           <Link
             href="/"
