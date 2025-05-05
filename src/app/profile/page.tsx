@@ -11,16 +11,15 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { useRouter } from "next/navigation"
 import { motion } from "framer-motion"
 import { useAuth } from "@/hooks/use-auth"
-import { useToast } from "@/hooks/use-toast"
 import { updateProfile, updateProfileImage } from "@/app/actions/profile"
 import { Loader2 } from "lucide-react"
+import toast from "react-hot-toast"
 
 export default function ProfilePage() {
   const { user, isLoading: authLoading } = useAuth()
   const [isLoading, setIsLoading] = useState(false)
   const [imageLoading, setImageLoading] = useState(false)
   const router = useRouter()
-  const { toast } = useToast()
   const fileInputRef = useRef<HTMLInputElement>(null)
 
   const [formData, setFormData] = useState({
@@ -66,24 +65,14 @@ export default function ProfilePage() {
       const result = await updateProfile(formData)
 
       if (result.success) {
-        toast({
-          title: "Profile updated",
-          description: "Your profile has been updated successfully",
-        })
-      } else {
-        toast({
-          title: "Update failed",
-          description: result.error,
-          variant: "destructive",
-        })
-      }
-    } catch (error) {
-      toast({
-        title: "Update failed",
-        description: "An unexpected error occurred",
-        variant: "destructive",
-      })
-    } finally {
+          toast.success("Profile Updated successful!")
+          router.push("/contacts")
+        } else {
+          toast.error("An unexpected error occurred")
+        }
+      } catch (error) {
+        toast.error("An unexpected error occurred")
+      } finally {
       setIsLoading(false)
     }
   }
@@ -105,23 +94,13 @@ export default function ProfilePage() {
       const result = await updateProfileImage(formData)
 
       if (result.success) {
-        toast({
-          title: "Profile image updated",
-          description: "Your profile image has been updated successfully",
-        })
+        toast.success("Profile Updated successful!")
+        router.push("/contacts")
       } else {
-        toast({
-          title: "Update failed",
-          description: result.error,
-          variant: "destructive",
-        })
+        toast.error("An unexpected error occurred")
       }
     } catch (error) {
-      toast({
-        title: "Update failed",
-        description: "An unexpected error occurred",
-        variant: "destructive",
-      })
+      toast.error("An unexpected error occurred")
     } finally {
       setImageLoading(false)
     }

@@ -8,6 +8,10 @@ interface User {
   fullName: string
   email: string
   profileImage?: string
+  phoneNumber: string
+  whatsappNumber: string
+  availableFrom: string // "10:00"
+  availableTo: string // "17:00"}
 }
 
 interface AuthContextType {
