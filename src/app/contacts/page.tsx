@@ -90,7 +90,7 @@ export default function ContactsPage() {
   }
 
   return (
-    <div className="container py-8">
+    <div className="container mx-auto py-8">
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
