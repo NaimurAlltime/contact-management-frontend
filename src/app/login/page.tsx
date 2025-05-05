@@ -9,7 +9,6 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { motion } from "framer-motion"
 import { login } from "@/app/actions/auth"
-import { useToast } from "@/hooks/use-toast"
 import toast from "react-hot-toast"
 
 export default function LoginPage() {
@@ -34,7 +33,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="container flex items-center justify-center min-h-[calc(100vh-80px)] p-4">
+    <div className="container mx-auto flex items-center justify-center min-h-[calc(100vh-80px)] p-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

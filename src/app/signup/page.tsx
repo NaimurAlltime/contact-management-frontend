@@ -11,7 +11,6 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { motion } from "framer-motion"
 import { signup } from "@/app/actions/auth"
-import { useToast } from "@/hooks/use-toast"
 import { toast } from "react-hot-toast"
 
 export default function SignupPage() {
@@ -45,7 +44,7 @@ export default function SignupPage() {
   }
 
   return (
-    <div className="container flex items-center justify-center min-h-[calc(100vh-80px)] py-8">
+    <div className="container mx-auto flex items-center justify-center min-h-[calc(100vh-80px)] py-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
