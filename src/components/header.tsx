@@ -92,10 +92,10 @@ export default function Header() {
               ) : (
                 <div className="flex items-center gap-2">
                   <Link href="/login">
-                    <Button variant="ghost">Login</Button>
+                    <Button variant="outline">Login</Button>
                   </Link>
                   <Link href="/signup">
-                    <Button>Sign Up</Button>
+                    <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">Sign Up</Button>
                   </Link>
                 </div>
               )}

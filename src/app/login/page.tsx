@@ -22,7 +22,8 @@ export default function LoginPage() {
       const result = await login(formData)
       if (result.success) {
           toast.success("Login successful!")
-          router.push("/login")
+          router.push("/contacts")
+          router.refresh();
         } else {
           toast.error("An unexpected error occurred")
         }
@@ -56,7 +57,7 @@ export default function LoginPage() {
                 <Label htmlFor="password">Password</Label>
                 <Input id="password" name="password" type="password" required />
               </div>
-              <Button type="submit" className="w-full" disabled={isLoading}>
+              <Button type="submit" className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700" disabled={isLoading}>
                 {isLoading ? "Logging in..." : "Login"}
               </Button>
             </form>

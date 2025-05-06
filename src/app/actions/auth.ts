@@ -35,7 +35,7 @@ export async function login(formData: FormData) {
       token,
     }
 
-    cookies().set("session", JSON.stringify(session), {
+    ;(await cookies()).set("session", JSON.stringify(session), {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       maxAge: 60 * 60 * 24 * 7, // 1 week
@@ -97,13 +97,13 @@ export async function signup(formData: FormData) {
 }
 
 export async function logout() {
-  cookies().delete("session")
+  (await cookies()).delete("session")
   revalidatePath("/")
   redirect("/")
 }
 
 export async function getCurrentUser() {
-  const sessionCookie = cookies().get("session")
+  const sessionCookie = (await cookies()).get("session")
 
   if (!sessionCookie?.value) {
     return null

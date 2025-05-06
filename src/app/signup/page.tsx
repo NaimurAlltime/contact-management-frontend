@@ -98,7 +98,7 @@ export default function SignupPage() {
                   </div>
                 )}
               </div>
-              <Button type="submit" className="w-full" disabled={isLoading}>
+              <Button type="submit" className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700" disabled={isLoading}>
                 {isLoading ? "Creating account..." : "Sign Up"}
               </Button>
             </form>
